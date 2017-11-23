@@ -1,0 +1,39 @@
+
+<Parameters>
+	<ObjectItem RItem='True' SItem='True' PItem='True'>
+		<RealworldItem RItemCount='4'>
+			<RItem id='10' state='On' name='' type='motor' interruptable='no'/>
+			<RItem id='13' state='On' name='' type='camera' interruptable='no'/>
+			<RItem id='14' state='On' name='' type='switch' interruptable='yes' int_handler='12' sw_value='off'/>
+		</RealworldItem>
+
+		<SoftwareItem>
+			<SItem id='16' state='On' name='' type='Delay' interruptable='no' delay_time='2' />
+			<SItem id='13' state='On' name='' type='Player' interruptable='no' />
+		</SoftwareItem>
+
+		<ProgramItem>
+			<PItem id='18' state='On' name='' type='Operator' interruptable='no' calc_type='SUM' Var_A='1' Var_B='1' />
+			<PItem id='20' state='On' name='' type='Assigner' interruptable='no' Var_A='1' Var_B='1' />
+			<PItem id='19' state='On' name='' type='Switch' interruptable='no' comp_type='eq' Var_A='2' Var_B='3' Behaviour_Pos='10' Behaviour_Neg='12'/>
+			<PItem id='20' state='On' name='' type='Loop' interruptable='no' loop_count='12' Behaviour='13'/>
+			<PItem id='21' state='On' name='' type='While' interruptable='no' comp_type='eq' Var_A='32' Var_B='32' Behaviour='14'/>
+		</ProgramItem>
+	</ObjectItem>
+
+	<Variables>
+		<Var id='0' type='INT' behave_id='0' name='myInt' val='12'/>
+		<Var id='1' type='DOUBLE' behave_id='0' name='myDouble' val='23.45'/>
+		<Var id='2' type='STRING' behave_id='0' name='myString' val='STATE'/>
+		<Var id='3' type='BOOL' behave_id='0' name='myBoolean' val='True'/>
+		<Var id='4' type='MP3' behave_id='13' name='HappyBirdSong' val='happy_song.mp3'/>
+	</Variables>
+</Parameters>
+
+<Program>
+	<Action id='1' item_id='10' action_item='drive' direction='forward' speed='100' />
+	<Action id='2' item_id='10' action_item='hold' />
+	<Action id='3' item_id='13' action_item='snapshot' />
+	<Action id='4' item_id='20' action_item='assign' left_var_id='0'                    right_var_id='-1' rigth_var_val='23'/>
+	
+</Program>
